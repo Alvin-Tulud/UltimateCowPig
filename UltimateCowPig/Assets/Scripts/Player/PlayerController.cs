@@ -23,6 +23,8 @@ using UnityEngine;
 
         private float _time;
 
+        public int jumpCount=2;
+        private int remainingJumps=2;
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -93,6 +95,7 @@ using UnityEngine;
                 _coyoteUsable = true;
                 _bufferedJumpUsable = true;
                 _endedJumpEarly = false;
+                remainingJumps=jumpCount;
                 GroundedChanged?.Invoke(true, Mathf.Abs(_frameVelocity.y));
             }
             // Left the Ground
@@ -126,7 +129,7 @@ using UnityEngine;
 
             if (!_jumpToConsume && !HasBufferedJump) return;
 
-            if (_grounded || CanUseCoyote) ExecuteJump();
+            if (_grounded || CanUseCoyote||remainingJumps>0) ExecuteJump();
 
             _jumpToConsume = false;
         }
@@ -138,6 +141,7 @@ using UnityEngine;
             _bufferedJumpUsable = false;
             _coyoteUsable = false;
             _frameVelocity.y = _stats.JumpPower;
+            remainingJumps-=1;
             Jumped?.Invoke();
         }
 
