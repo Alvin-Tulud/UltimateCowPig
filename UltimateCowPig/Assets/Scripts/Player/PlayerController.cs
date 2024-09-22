@@ -25,6 +25,14 @@ using UnityEngine;
 
         public int jumpCount=2;
         private int remainingJumps=2;
+        private float speedBuff=1;
+
+        public float GetSpeedBuff(){
+            return speedBuff;
+        }
+        public void SetSpeedBuff(float speedUp) {
+            speedBuff=speedUp;
+        }
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -154,11 +162,11 @@ using UnityEngine;
             if (_frameInput.Move.x == 0)
             {
                 var deceleration = _grounded ? _stats.GroundDeceleration : _stats.AirDeceleration;
-                _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, 0, deceleration * Time.fixedDeltaTime);
+                _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, 0, deceleration*speedBuff * Time.fixedDeltaTime);
             }
             else
             {
-                _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, _frameInput.Move.x * _stats.MaxSpeed, _stats.Acceleration * Time.fixedDeltaTime);
+                _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, _frameInput.Move.x * _stats.MaxSpeed*speedBuff, _stats.Acceleration * Time.fixedDeltaTime);
             }
         }
 
