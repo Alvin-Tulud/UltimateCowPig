@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class SpawnObstacle : MonoBehaviour
 {
@@ -60,9 +61,15 @@ public class SpawnObstacle : MonoBehaviour
 
             CheckIfObstacleThere = Physics2D.CircleCast(ObstaclePlacementSpot, 0.1f, Vector2.zero, 0.0f, ObstacleMask);
         }
-        
 
-        Instantiate(obstacle, ObstaclePlacementSpot, Quaternion.identity);
+        GameObject obstacleSpawned;
+        obstacleSpawned = Instantiate(obstacle, ObstaclePlacementSpot, Quaternion.identity);
+
+        //recalculate the part of the astar graph under it
+        Bounds bounds = obstacleSpawned.GetComponent<Collider2D>().bounds;
+
+        AstarPath.active.UpdateGraphs(bounds);
+
 
 
         clearPlayersPosLog();
