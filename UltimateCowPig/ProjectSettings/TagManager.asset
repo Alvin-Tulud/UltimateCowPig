@@ -8,6 +8,9 @@ TagManager:
   - End
   - Spike
   - Enemy
+  - killScreen
+  - enemykill
+  - spikekill
   layers:
   - Default
   - TransparentFX

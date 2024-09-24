@@ -13,8 +13,8 @@ public class TestRunner : MonoBehaviour
 
     public bool startRunnerCheck()
     {
-        start = GameObject.FindWithTag("start");
-        end = GameObject.FindWithTag("end");
+        start = GameObject.FindWithTag("Start");
+        end = GameObject.FindWithTag("End");
 
 
         GameObject runnerObj;
@@ -25,6 +25,9 @@ public class TestRunner : MonoBehaviour
         Path runnerPath;
         runnerPath = runnerObj.GetComponent<Seeker>().GetCurrentPath();
         List<GraphNode> paths = runnerPath.path;
+
+
+        Destroy(runnerObj);
 
 
         return PathUtilities.IsPathPossible(paths);
