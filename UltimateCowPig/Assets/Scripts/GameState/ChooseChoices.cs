@@ -24,17 +24,7 @@ public class ChooseChoices : MonoBehaviour
     {
         
     }
-    public void AddTime(){
-        //add time
-        manager.addTimer(timeadded);
 
-        //add barrier
-        /*
-        Random rnd = new Random();
-        int rndBuff=rnd.Next(0,obstacle.Length-1); 
-        spawner.spawnObstacle(obstacle[rndBuff]);
-        */
-    }
     void RemoveTime(){
         //remove time
         manager.addTimer(timeSubtracted);
@@ -61,5 +51,18 @@ public class ChooseChoices : MonoBehaviour
         }
         RemoveTime();
         //remove time 
+        Time.timeScale = 1;
+    }
+    public void AddTime(){
+        //add time
+        manager.addTimer(timeadded);
+
+        //add barrier
+        /*
+        Random rnd = new Random();
+        int rndBuff=rnd.Next(0,obstacle.Length-1); 
+        spawner.spawnObstacle(obstacle[rndBuff]);
+        */
+        Time.timeScale = 1;
     }
 }

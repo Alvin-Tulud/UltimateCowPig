@@ -13,9 +13,14 @@ public class GameStateManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+   void FixedUpdate()
     {
-        updateTime();
+        if (timer <= 0.0f){
+            timerText= string.Format("{0:00}:{1:00}:{2:000}",0,0,0);
+            //kill player
+        }else{
+            updateTime();
+        }
     }
     public float getTimer(){
         return timer;
@@ -27,12 +32,13 @@ public class GameStateManager : MonoBehaviour
         timer+=input;
     }
     private void updateTime(){
-        timer-=Time.deltaTime;
+
+        
         int minutes = Mathf.FloorToInt(timer/60);
         int seconds = Mathf.FloorToInt(timer%60);
         int milliseconds = Mathf.FloorToInt(timer*1000);
         milliseconds=milliseconds%1000;
-
         timerText= string.Format("{0:00}:{1:00}:{2:000}",minutes,seconds,milliseconds);
+        timer-=Time.deltaTime;
     }
 }
