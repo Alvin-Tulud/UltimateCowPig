@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class ChooseChoices : MonoBehaviour
 {
+    public SpawnObstacle spawner;
+    public GameObject[] obstacle;
     public GameObject Player;
     // Start is called before the first frame update
     void Start()
@@ -16,12 +19,17 @@ public class ChooseChoices : MonoBehaviour
     {
         
     }
-    void AddTime(){
+    public void AddTime(){
         //add time
+
+
         //add barrier
+        Random rnd = new Random();
+        int rndBuff=rnd.Next(0,obstacle.Length-1); 
+        spawner.spawnObstacle(obstacle[rndBuff]);
     }
     void RemoveTime(){
-        //add time
+        //remove time
     }
     void addSpeed(){
          float currentBuff=Player.GetComponent<PlayerController>().GetSpeedBuff();
@@ -32,7 +40,7 @@ public class ChooseChoices : MonoBehaviour
     }
 
     //this one will choose a random buff to add 
-    void addBuff(){
+    public void addBuff(){
         Random rnd = new Random();
         int rndBuff=rnd.Next(0,3); 
         switch(rndBuff){
