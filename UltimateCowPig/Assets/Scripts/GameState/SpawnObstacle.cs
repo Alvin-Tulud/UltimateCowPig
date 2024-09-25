@@ -12,7 +12,9 @@ public class SpawnObstacle : MonoBehaviour
 
     private TestRunner TestRunnerScript;
 
+    [SerializeField]
     private List<Vector3> playerPosLog = new List<Vector3>();
+    
     private bool startLog;
     private const int LogTimerMax = 25;
     private int LogTimerCount;
@@ -84,7 +86,10 @@ public class SpawnObstacle : MonoBehaviour
 
     public void LogPlayerPos()
     {
-        playerPosLog.Add(GameObject.FindWithTag("Player").transform.position);
+        if (!playPosLog.Contains(GameObject.FindWithTag("Player").transform.position))
+        {
+            playerPosLog.Add(GameObject.FindWithTag("Player").transform.position);
+        }
     }
 
     public void clearPlayersPosLog()
