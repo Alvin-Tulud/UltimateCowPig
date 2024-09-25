@@ -17,6 +17,15 @@ public class GameStateManager : MonoBehaviour
     {
         updateTime();
     }
+    public float getTimer(){
+        return timer;
+    }
+    public void setTimer(float input){
+        timer=input;
+    }
+    public void addTimer(float input){
+        timer+=input;
+    }
     private void updateTime(){
         timer-=Time.deltaTime;
         int minutes = Mathf.FloorToInt(timer/60);

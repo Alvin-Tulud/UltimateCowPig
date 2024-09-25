@@ -6,8 +6,13 @@ using Random = System.Random;
 public class ChooseChoices : MonoBehaviour
 {
     public SpawnObstacle spawner;
+
+    public GameStateManager manager;
     public GameObject[] obstacle;
     public GameObject Player;
+
+    float timeadded=30.0f;
+    float timeSubtracted=-10.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,15 +26,18 @@ public class ChooseChoices : MonoBehaviour
     }
     public void AddTime(){
         //add time
-
+        manager.addTimer(timeadded);
 
         //add barrier
+        /*
         Random rnd = new Random();
         int rndBuff=rnd.Next(0,obstacle.Length-1); 
         spawner.spawnObstacle(obstacle[rndBuff]);
+        */
     }
     void RemoveTime(){
         //remove time
+        manager.addTimer(timeSubtracted);
     }
     void addSpeed(){
          float currentBuff=Player.GetComponent<PlayerController>().GetSpeedBuff();
