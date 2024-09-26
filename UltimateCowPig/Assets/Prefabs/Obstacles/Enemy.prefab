@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 631490884821548965}
   - component: {fileID: 2747333584294419118}
   - component: {fileID: 7784379276118156103}
+  - component: {fileID: 2317092755121207635}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -179,7 +180,7 @@ MonoBehaviour:
   radius: 0.5
   height: 2
   canMove: 1
-  maxSpeed: 1
+  maxSpeed: 0.5
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -231,6 +232,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff31bf982a6ce084c85efe09bad3235e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 8
+--- !u!114 &2317092755121207635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473312266324639553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f08949b15f802f64ba0b57a265cb5f35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

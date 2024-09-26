@@ -12,7 +12,6 @@ public class SpawnObstacle : MonoBehaviour
 
     private TestRunner TestRunnerScript;
 
-    [SerializeField]
     private List<Vector3> playerPosLog = new List<Vector3>();
     
     private bool startLog;

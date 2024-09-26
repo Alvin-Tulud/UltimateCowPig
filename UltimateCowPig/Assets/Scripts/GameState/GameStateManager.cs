@@ -7,17 +7,20 @@ public class GameStateManager : MonoBehaviour
     // Start is called before the first frame update
     private float timer;
     public string timerText;
-    public static GameObject WinScreen;
+    private static GameObject WinScreen;
 
     public GameObject player;
 
-    public static CameraFollow camera;
+    private static CameraFollow camera;
     private static int roundCount;
 
     private int lifeCount;
 
     void Start()
     {
+        WinScreen = GameObject.FindWithTag("Overlay").transform.GetChild(1).gameObject;
+        camera = Camera.main.GetComponent<CameraFollow>();
+
         timer=60.0f;
         roundCount=0;
         lifeCount=6;
@@ -61,12 +64,24 @@ public class GameStateManager : MonoBehaviour
             Debug.Log("camera:"+camera.currentScreen);
         }
         PlayerController.ResetToSpawn();
+        resetEnemies();
         WinScreen.SetActive(true);
-
     }
 
     public static void DeadState()
     {
+        PlayerController.ResetToSpawn();
+        resetEnemies();
+    }
 
+    private static void resetEnemies()
+    {
+        List<GameObject> enemies = new List<GameObject>();
+        GameObject.FindGameObjectsWithTag("Enemy", enemies);
+
+        foreach(GameObject enemy in enemies)
+        {
+            enemy.GetComponent<EnemyAI>().resetPosition();
+        }
     }
 }

@@ -9,7 +9,7 @@ public class KillPlayer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            //create a reset functions for gamestate
+            GameStateManager.DeadState();
         }
     }
 }

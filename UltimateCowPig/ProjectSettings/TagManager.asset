@@ -11,6 +11,7 @@ TagManager:
   - killScreen
   - enemykill
   - spikekill
+  - Overlay
   layers:
   - Default
   - TransparentFX
