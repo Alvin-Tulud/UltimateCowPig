@@ -8,8 +8,16 @@ public class TestRunner : MonoBehaviour
     [SerializeField]
     private GameObject runner;
 
+    private GameObject runnerObj;
+    Path runnerPath;
+    bool canCompleteLevel;
+
     private GameObject start;
     private GameObject end;
+
+    public List<GraphNode> paths = new List<GraphNode>();
+    private List<Vector3> pathNodes = new List<Vector3>();
+    private bool outState;
 
     public bool startRunnerCheck()
     {
@@ -17,19 +25,21 @@ public class TestRunner : MonoBehaviour
         end = GameObject.FindWithTag("End");
 
 
-        GameObject runnerObj;
         runnerObj = Instantiate(runner, start.transform.position, start.transform.rotation);
-
-
         runnerObj.GetComponent<AIDestinationSetter>().target = end.transform;
-        Path runnerPath;
-        runnerPath = runnerObj.GetComponent<Seeker>().GetCurrentPath();
-        List<GraphNode> paths = runnerPath.path;
 
+        StartCoroutine(waitRunner());
+
+        runnerObj.GetComponent<AIPath>().GetRemainingPath(pathNodes, out outState);
+        canCompleteLevel = pathNodes[pathNodes.Count - 1].Equals(end.transform.position);
 
         Destroy(runnerObj);
 
+        return canCompleteLevel;
+    }
 
-        return PathUtilities.IsPathPossible(paths);
+    private IEnumerator waitRunner()
+    {
+        yield return new WaitForSeconds(0.25f);
     }
 }

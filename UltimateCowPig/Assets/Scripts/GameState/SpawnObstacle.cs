@@ -52,19 +52,19 @@ public class SpawnObstacle : MonoBehaviour
 
 
         RaycastHit2D CheckIfObstacleThere;
-        CheckIfObstacleThere = Physics2D.CircleCast(ObstaclePlacementSpot, 0.1f, Vector2.zero, 0.0f, ObstacleMask);
+        CheckIfObstacleThere = Physics2D.CircleCast(ObstaclePlacementSpot, 1f, Vector2.zero, 0.0f, ObstacleMask);
 
 
-        while (!CheckIfObstacleThere && TestRunnerScript.startRunnerCheck())
+        while (CheckIfObstacleThere && TestRunnerScript.startRunnerCheck())
         {
             RandomSpotInPlayerPath = Random.Range(0, playerPosLog.Count);
             ObstaclePlacementSpot = PlacementGrid.LocalToCell(playerPosLog[RandomSpotInPlayerPath]);
 
 
-            CheckIfObstacleThere = Physics2D.CircleCast(ObstaclePlacementSpot, 0.1f, Vector2.zero, 0.0f, ObstacleMask);
+            CheckIfObstacleThere = Physics2D.CircleCast(ObstaclePlacementSpot, 0.5f, Vector2.zero, 0.0f, ObstacleMask);
         }
 
-        Debug.Log(TestRunnerScript.startRunnerCheck());
+        //Debug.Log(TestRunnerScript.startRunnerCheck());
 
         GameObject obstacleSpawned;
         obstacleSpawned = Instantiate(obstacle, ObstaclePlacementSpot, Quaternion.identity);
@@ -86,7 +86,7 @@ public class SpawnObstacle : MonoBehaviour
 
     public void LogPlayerPos()
     {
-        if (!playPosLog.Contains(GameObject.FindWithTag("Player").transform.position))
+        if (!playerPosLog.Contains(GameObject.FindWithTag("Player").transform.position))
         {
             playerPosLog.Add(GameObject.FindWithTag("Player").transform.position);
         }
