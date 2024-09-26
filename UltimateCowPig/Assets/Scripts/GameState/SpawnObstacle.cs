@@ -26,7 +26,7 @@ public class SpawnObstacle : MonoBehaviour
 
         TestRunnerScript = GetComponent<TestRunner>();
 
-        startLog = false;
+        startLog = true;
         LogTimerCount = 0;
 
     }
@@ -47,6 +47,7 @@ public class SpawnObstacle : MonoBehaviour
 
     public void spawnObstacle(GameObject obstacle)
     {
+        
         int RandomSpotInPlayerPath = Random.Range(0, playerPosLog.Count);
         Vector3 ObstaclePlacementSpot = PlacementGrid.LocalToCell(playerPosLog[RandomSpotInPlayerPath]);
 
@@ -88,6 +89,7 @@ public class SpawnObstacle : MonoBehaviour
     {
         if (!playerPosLog.Contains(GameObject.FindWithTag("Player").transform.position))
         {
+            
             playerPosLog.Add(GameObject.FindWithTag("Player").transform.position);
         }
     }

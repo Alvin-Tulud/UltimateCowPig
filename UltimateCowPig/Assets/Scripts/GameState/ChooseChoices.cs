@@ -58,11 +58,11 @@ public class ChooseChoices : MonoBehaviour
         manager.addTimer(timeadded);
 
         //add barrier
-        /*
+        
         Random rnd = new Random();
         int rndBuff=rnd.Next(0,obstacle.Length-1); 
         spawner.spawnObstacle(obstacle[rndBuff]);
-        */
+        
         Time.timeScale = 1;
     }
 }
