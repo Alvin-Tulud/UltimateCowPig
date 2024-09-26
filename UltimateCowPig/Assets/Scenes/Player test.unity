@@ -120,6 +120,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &78956780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8869002326101096684, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
+  m_PrefabInstance: {fileID: 1141727227}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &254030460
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +325,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: 
+  WinScreen: {fileID: 78956780}
+  player: {fileID: 1545268985}
+  camera: {fileID: 933587557}
 --- !u!4 &476281599
 Transform:
   m_ObjectHideFlags: 0
@@ -630,6 +638,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: World
       objectReference: {fileID: 0}
+    - target: {fileID: 5553091991898375868, guid: f92fae2368333a34195d74449b3aefc0, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 476281598}
+    - target: {fileID: 5553091991898375868, guid: f92fae2368333a34195d74449b3aefc0, type: 3}
+      propertyPath: playerMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6176972431457958162, guid: f92fae2368333a34195d74449b3aefc0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30.13
@@ -654,10 +670,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 8689392961294306906, guid: f92fae2368333a34195d74449b3aefc0, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3027093947690455712, guid: f92fae2368333a34195d74449b3aefc0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2121760398}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f92fae2368333a34195d74449b3aefc0, type: 3}
 --- !u!1 &933587552
 GameObject:
@@ -965,7 +978,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -57, y: -2.4, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1241,6 +1254,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4309914644079832947, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
+      propertyPath: m_fontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309914644079832947, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
+      propertyPath: m_margin.z
+      value: -184.93344
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309914644079832947, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 6681867005272560403, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
       propertyPath: Player
       value: 
@@ -1257,6 +1282,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 476281598}
+    - target: {fileID: 8869002326101096684, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1937,25 +1966,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae561300e14081e48ba117c7d8a191b6, type: 3}
---- !u!1 &2121760394 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3027093947690455712, guid: f92fae2368333a34195d74449b3aefc0, type: 3}
-  m_PrefabInstance: {fileID: 829443131}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2121760398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121760394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d168c0924fe22745bd2caef49fd4172, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawner: {fileID: 385252083}
-  obstacle: {fileID: 1093835954}
 --- !u!1 &2130998237
 GameObject:
   m_ObjectHideFlags: 0

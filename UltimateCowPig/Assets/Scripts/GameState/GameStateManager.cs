@@ -7,9 +7,20 @@ public class GameStateManager : MonoBehaviour
     // Start is called before the first frame update
     private float timer;
     public string timerText;
+    public GameObject WinScreen;
+
+    public GameObject player;
+
+    public CameraFollow camera;
+    private int roundCount;
+
+    private int lifeCount;
+
     void Start()
     {
         timer=60.0f;
+        roundCount=0;
+        lifeCount=6;
     }
 
     // Update is called once per frame
@@ -40,5 +51,15 @@ public class GameStateManager : MonoBehaviour
         milliseconds=milliseconds%1000;
         timerText= string.Format("{0:00}:{1:00}:{2:000}",minutes,seconds,milliseconds);
         timer-=Time.deltaTime;
+    }
+    public void WinState(){
+        roundCount++;
+        //increase screen on multiples of 5
+        if (roundCount%5==0){
+            camera.currentScreen++;
+        }
+        player.GetComponent<PlayerController>().ResetToSpawn();
+        WinScreen.SetActive(true);
+
     }
 }

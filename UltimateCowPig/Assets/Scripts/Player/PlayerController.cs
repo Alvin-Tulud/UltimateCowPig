@@ -13,6 +13,9 @@ using UnityEngine;
         private Vector2 _frameVelocity;
         private bool _cachedQueryStartInColliders;
 
+
+        private Vector3 startingPosition;
+
         #region Interface
 
         public Vector2 FrameInput => _frameInput.Move;
@@ -33,12 +36,18 @@ using UnityEngine;
         public void SetSpeedBuff(float speedUp) {
             speedBuff=speedUp;
         }
+
+        public void ResetToSpawn(){
+            transform.position=startingPosition;
+        }
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
             _col = GetComponent<CapsuleCollider2D>();
 
             _cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
+            startingPosition=transform.position;
+
         }
 
         private void Update()
