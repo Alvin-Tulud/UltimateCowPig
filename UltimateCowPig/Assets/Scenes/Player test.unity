@@ -1337,10 +1337,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2438953623485838423, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
-      propertyPath: m_Name
-      value: Timer
-      objectReference: {fileID: 0}
     - target: {fileID: 3782718158386766858, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
       propertyPath: Player
       value: 
@@ -1355,7 +1351,7 @@ PrefabInstance:
       objectReference: {fileID: 385252083}
     - target: {fileID: 3782718158386766858, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
       propertyPath: obstacle.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3782718158386766858, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
       propertyPath: 'obstacle.Array.data[0]'
@@ -1364,34 +1360,14 @@ PrefabInstance:
     - target: {fileID: 3782718158386766858, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
       propertyPath: 'obstacle.Array.data[1]'
       value: 
-      objectReference: {fileID: 1093835954}
+      objectReference: {fileID: 7473312266324639553, guid: 8d9319646b944e348a6817c2936dfc23, type: 3}
     - target: {fileID: 3782718158386766858, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
       propertyPath: 'obstacle.Array.data[2]'
       value: 
-      objectReference: {fileID: 1093835954}
-    - target: {fileID: 3782718158386766858, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
-      propertyPath: 'obstacle.Array.data[3]'
-      value: 
-      objectReference: {fileID: 1093835954}
+      objectReference: {fileID: 486640518325296445, guid: 7bde562e723c4704095a2ada5d2ff376, type: 3}
     - target: {fileID: 3970013191694455698, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3970013191694455698, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
-      propertyPath: m_TagString
-      value: Overlay
-      objectReference: {fileID: 0}
-    - target: {fileID: 4309914644079832947, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
-      propertyPath: m_fontSize
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 4309914644079832947, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
-      propertyPath: m_margin.z
-      value: -184.93344
-      objectReference: {fileID: 0}
-    - target: {fileID: 4309914644079832947, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6681867005272560403, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
       propertyPath: Player
@@ -1409,10 +1385,6 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 476281598}
-    - target: {fileID: 8869002326101096684, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

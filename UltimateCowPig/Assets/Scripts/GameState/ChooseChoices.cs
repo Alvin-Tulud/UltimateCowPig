@@ -11,8 +11,8 @@ public class ChooseChoices : MonoBehaviour
     public GameObject[] obstacle;
     public GameObject Player;
 
-    float timeadded=30.0f;
-    float timeSubtracted=-10.0f;
+    float timeadded=5.0f;
+    float timeSubtracted=-5.0f;
     // Start is called before the first frame update
     void Start()
     {

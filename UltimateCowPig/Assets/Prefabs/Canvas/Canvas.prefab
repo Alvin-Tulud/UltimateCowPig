@@ -385,9 +385,8 @@ MonoBehaviour:
   manager: {fileID: 0}
   obstacle:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7473312266324639553, guid: 8d9319646b944e348a6817c2936dfc23, type: 3}
+  - {fileID: 486640518325296445, guid: 7bde562e723c4704095a2ada5d2ff376, type: 3}
   Player: {fileID: 0}
 --- !u!1 &1162436549707308312
 GameObject:
