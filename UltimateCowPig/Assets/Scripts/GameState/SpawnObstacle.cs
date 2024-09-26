@@ -87,10 +87,9 @@ public class SpawnObstacle : MonoBehaviour
 
     public void LogPlayerPos()
     {
-        if (!playerPosLog.Contains(GameObject.FindWithTag("Player").transform.position))
+        if (!playerPosLog.Contains(PlayerController.playerPosition.position))
         {
-            
-            playerPosLog.Add(GameObject.FindWithTag("Player").transform.position);
+            playerPosLog.Add(PlayerController.playerPosition.position);
         }
     }
 

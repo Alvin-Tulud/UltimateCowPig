@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class KillPlayer : MonoBehaviour
 {
-    [SerializeField]
-    private LayerMask obstacleMask;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer.CompareTo(obstacleMask) == 0)
+        if (collision.gameObject.tag == "Player")
         {
             //create a reset functions for gamestate
         }

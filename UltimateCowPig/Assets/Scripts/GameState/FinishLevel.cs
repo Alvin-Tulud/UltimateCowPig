@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class FinishLevel : MonoBehaviour
 {
-    [SerializeField]
-    private LayerMask playerMask;
-    public GameStateManager manager;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,7 +11,7 @@ public class FinishLevel : MonoBehaviour
         if (collision.gameObject.tag=="Player")
         {
             Time.timeScale = 0;
-            manager.WinState();
+            GameStateManager.WinState();
             //winstate function call
              
 

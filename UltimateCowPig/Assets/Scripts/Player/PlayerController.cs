@@ -14,7 +14,8 @@ using UnityEngine;
         private bool _cachedQueryStartInColliders;
 
 
-        private Vector3 startingPosition;
+        private static Vector3 startingPosition;
+        public static Transform playerPosition;
 
         #region Interface
 
@@ -37,8 +38,8 @@ using UnityEngine;
             speedBuff=speedUp;
         }
 
-        public void ResetToSpawn(){
-            transform.position=startingPosition;
+        public static void ResetToSpawn(){
+            playerPosition.position=startingPosition;
         }
         private void Awake()
         {
@@ -46,6 +47,7 @@ using UnityEngine;
             _col = GetComponent<CapsuleCollider2D>();
 
             _cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
+            playerPosition = transform;
             startingPosition=transform.position;
 
         }
