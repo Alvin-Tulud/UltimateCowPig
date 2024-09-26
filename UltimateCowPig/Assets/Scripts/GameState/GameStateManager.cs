@@ -55,8 +55,10 @@ public class GameStateManager : MonoBehaviour
     public void WinState(){
         roundCount++;
         //increase screen on multiples of 5
+        
         if (roundCount%5==0){
             camera.currentScreen++;
+            Debug.Log("camera:"+camera.currentScreen);
         }
         player.GetComponent<PlayerController>().ResetToSpawn();
         WinScreen.SetActive(true);

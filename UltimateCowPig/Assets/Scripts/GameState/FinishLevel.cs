@@ -11,10 +11,8 @@ public class FinishLevel : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
        
-        Debug.Log("ddddd"+collision.gameObject.layer.CompareTo(playerMask));
-        if (collision.gameObject.layer.CompareTo(playerMask) == 0)
+        if (collision.gameObject.tag=="Player")
         {
-            Debug.Log("triggerr aAAAAAAAAA");
             Time.timeScale = 0;
             manager.WinState();
             //winstate function call

@@ -33,7 +33,7 @@ public class CameraFollow : MonoBehaviour
     {
         Vector3 cameraTopRightCornerPos = cam.ViewportToWorldPoint(new Vector3(1,1,cam.nearClipPlane));
         float positionDelta=UpdateTargetPos().x-target.x;
-        if(positionDelta+cameraTopRightCornerPos.x<currentScreen+edgeOfScreen){
+        if(positionDelta+cameraTopRightCornerPos.x<(edgeOfScreen+width*currentScreen)){
             target = UpdateTargetPos();
         }
         //target = UpdateTargetPos();
