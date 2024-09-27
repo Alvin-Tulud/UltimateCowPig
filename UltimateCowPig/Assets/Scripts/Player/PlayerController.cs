@@ -14,7 +14,7 @@ using UnityEngine;
         private bool _cachedQueryStartInColliders;
 
 
-        private static Vector3 startingPosition;
+        private  Vector3 startingPosition;
         public static Transform playerPosition;
 
         #region Interface
