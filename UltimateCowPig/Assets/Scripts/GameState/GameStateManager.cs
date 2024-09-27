@@ -93,7 +93,7 @@ public class GameStateManager : MonoBehaviour
             spawner.spawnObstacle(obstacle[rndBuff]);
         }
         //total win
-        if (roundCount>=6){
+        if (roundCount>=15){
             WinScreen.SetActive(true);
             GameObject.Find("Timer").SetActive(false);
             GameObject.Find("Goals").SetActive(false);
