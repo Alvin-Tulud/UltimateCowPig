@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class KillPlayer : MonoBehaviour
 {
-
+    public GameStateManager manager;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            GameStateManager.DeadState();
+            manager.DeadState();
         }
     }
 }

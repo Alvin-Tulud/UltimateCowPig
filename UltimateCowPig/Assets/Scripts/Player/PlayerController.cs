@@ -38,8 +38,8 @@ using UnityEngine;
             speedBuff=speedUp;
         }
 
-        public static void ResetToSpawn(){
-            playerPosition.position=startingPosition;
+        public void ResetToSpawn(){
+            transform.position=startingPosition;
         }
         private void Awake()
         {

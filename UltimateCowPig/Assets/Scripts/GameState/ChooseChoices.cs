@@ -40,7 +40,7 @@ public class ChooseChoices : MonoBehaviour
     //this one will choose a random buff to add 
     public void addBuff(){
         Random rnd = new Random();
-        int rndBuff=rnd.Next(0,3); 
+        int rndBuff=rnd.Next(0,2); 
         switch(rndBuff){
             case 0:
                 addSpeed();

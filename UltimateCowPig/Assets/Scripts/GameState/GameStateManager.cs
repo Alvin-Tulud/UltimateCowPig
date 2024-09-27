@@ -1,40 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class GameStateManager : MonoBehaviour
 {
     // Start is called before the first frame update
     private float timer;
     public string timerText;
-    private static GameObject WinScreen;
+    public SpawnObstacle spawner;
+    public GameObject[] obstacle;
+    private  GameObject WinScreen;
+
+
+    //add loss screen
 
     public GameObject player;
 
-    private static CameraFollow camera;
-    private static int roundCount;
+    public GameObject ghost;
+
+    private  CameraFollow camera;
+    private  int roundCount;
 
     private int lifeCount;
 
     void Start()
     {
         WinScreen = GameObject.FindWithTag("Overlay").transform.GetChild(1).gameObject;
+        //add lose screen with button that either goes to menu or restarts
         camera = Camera.main.GetComponent<CameraFollow>();
 
-        timer=60.0f;
+        timer=0.0f;
         roundCount=0;
-        lifeCount=6;
+        lifeCount=3;
     }
 
     // Update is called once per frame
    void FixedUpdate()
     {
-        if (timer <= 0.0f){
-            timerText= string.Format("{0:00}:{1:00}:{2:000}",0,0,0);
-            //kill player
-        }else{
-            updateTime();
-        }
+        updateTime();
     }
     public float getTimer(){
         return timer;
@@ -53,28 +57,83 @@ public class GameStateManager : MonoBehaviour
         int milliseconds = Mathf.FloorToInt(timer*1000);
         milliseconds=milliseconds%1000;
         timerText= string.Format("{0:00}:{1:00}:{2:000}",minutes,seconds,milliseconds);
-        timer-=Time.deltaTime;
+        timer+=Time.deltaTime;
     }
-    public static void WinState(){
+    public void WinState(){
         roundCount++;
-        //increase screen on multiples of 5
-        
-        if (roundCount%5==0){
-            camera.currentScreen++;
-            Debug.Log("camera:"+camera.currentScreen);
+        //Add buff every 2 rounds won
+        if (roundCount%2==0){
+            Random rnd = new Random();
+            int rndBuff=rnd.Next(0,1); 
+            switch(rndBuff){
+                case 0:
+                    
+                    float currentBuff=player.GetComponent<PlayerController>().GetSpeedBuff();
+                    player.GetComponent<PlayerController>().SetSpeedBuff(currentBuff+0.25f);
+                    float currentBuff2=ghost.GetComponent<PlayerController>().GetSpeedBuff();
+                    ghost.GetComponent<PlayerController>().SetSpeedBuff(currentBuff2+0.25f);
+                    
+                    break;
+                case 1:
+                    
+                    player.GetComponent<PlayerController>().jumpCount++;
+                    ghost.GetComponent<PlayerController>().jumpCount++;
+                    break;
+            }
         }
-        PlayerController.ResetToSpawn();
+        //add barrier
+        if (roundCount%4==0){
+            Random rnd = new Random();
+            int rndBuff=rnd.Next(0,obstacle.Length-1); 
+            spawner.spawnObstacle(obstacle[rndBuff]);
+        }
+        //total win
+        if (roundCount>=20){
+            WinScreen.SetActive(true);
+        }
+
+        player.GetComponent<PlayerController>().ResetToSpawn();
+        ghost.GetComponent<PlayerController>().ResetToSpawn();
+        //reset timer
+        timer=0.0f;
+        //reset other stuff
         resetEnemies();
-        WinScreen.SetActive(true);
+        //switch
+        switchPlayers();
     }
 
-    public static void DeadState()
+    public void DeadState()
     {
-        PlayerController.ResetToSpawn();
+        lifeCount--;
+        if(lifeCount<0){
+            //lose screen
+        }
+        player.GetComponent<PlayerController>().ResetToSpawn();
+        ghost.GetComponent<PlayerController>().ResetToSpawn();
         resetEnemies();
     }
+    public void LossState(){
+        lifeCount--;
+        if(lifeCount<0){
+            //lose screen
+        }
+        player.GetComponent<PlayerController>().ResetToSpawn();
+        ghost.GetComponent<PlayerController>().ResetToSpawn();
+        resetEnemies();
+    }
+    private void switchPlayers(){
+        //player should stop recording and then just use path when ghost 
+        if(/* player!=ghost*/true){
+            //set player to ghost
+            //set ghost to player
+        }else{
+            //set player to player
+            //set ghost to ghost
+        }
 
-    private static void resetEnemies()
+    }
+
+    private void resetEnemies()
     {
         List<GameObject> enemies = new List<GameObject>();
         GameObject.FindGameObjectsWithTag("Enemy", enemies);
