@@ -12,7 +12,7 @@ public class MoveLogManager : MonoBehaviour
     private List<Vector3> playerPos = new List<Vector3>();
 
     //timer
-    private const float maxTime = 10;
+    private const float maxTime = 5;
     private float currentTime = 0;
 
     //for playing index
