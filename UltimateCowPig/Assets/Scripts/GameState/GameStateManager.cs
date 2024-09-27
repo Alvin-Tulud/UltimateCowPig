@@ -42,11 +42,7 @@ public class GameStateManager : MonoBehaviour
    void FixedUpdate()
     {
         updateTime();
-        if(timer<4.0f){
-            Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), ghost.GetComponent<Collider2D>(),true);
-        }else{
-            Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), ghost.GetComponent<Collider2D>(),false);
-        }
+
     }
     public float getTimer(){
         return timer;
@@ -149,22 +145,19 @@ public class GameStateManager : MonoBehaviour
         resetEnemies();
     }
     public void LossState(){
-        lifeCount--;
-        if(lifeCount<0){
-            Time.timeScale=0;
-            LossScreen.SetActive(true);
-            Debug.Log("YOU LOST !");
-        }
+       
          timer=0.0f;
-        player.GetComponent<PlayerController>().ResetToSpawn();
-        ghost.GetComponent<PlayerController>().ResetToSpawn();
+       // player.GetComponent<PlayerController>().ResetToSpawn();
+        //ghost.GetComponent<PlayerController>().ResetToSpawn();
 
         //clear log of dead player, reset play of ghost player
         if(player.GetComponent<PlayerController>().isGhost==false){
-            player.GetComponent<MoveLogManager>().clearLog();
+           // player.GetComponent<MoveLogManager>().clearLog();
+            ghost.GetComponent<PlayerController>().ResetToSpawn();
             ghost.GetComponent<MoveLogManager>().resetPlayback();
         }else{
-            ghost.GetComponent<MoveLogManager>().clearLog();
+           // ghost.GetComponent<MoveLogManager>().clearLog();
+             player.GetComponent<PlayerController>().ResetToSpawn();
             player.GetComponent<MoveLogManager>().resetPlayback();
         }
 
