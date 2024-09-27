@@ -41,6 +41,11 @@ public class GameStateManager : MonoBehaviour
    void FixedUpdate()
     {
         updateTime();
+        if(timer<4.0f){
+            Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), ghost.GetComponent<Collider2D>(),true);
+        }else{
+            Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), ghost.GetComponent<Collider2D>(),false);
+        }
     }
     public float getTimer(){
         return timer;
@@ -130,13 +135,17 @@ public class GameStateManager : MonoBehaviour
         if( player.GetComponent<PlayerController>().isGhost == false ){
             //set player to ghost
             player.GetComponent<PlayerController>().isGhost=true;
+            player.GetComponent<MoveLogManager>().beginPlayLog();
             ghost.GetComponent<PlayerController>().isGhost=false;
+            ghost.GetComponent<MoveLogManager>().beginPosLog();
             //set ghost to player
         }else{
             //set player to player
             //set ghost to ghost
             player.GetComponent<PlayerController>().isGhost=false;
+            player.GetComponent<MoveLogManager>().beginPosLog();
             ghost.GetComponent<PlayerController>().isGhost=true;
+            ghost.GetComponent<MoveLogManager>().beginPlayLog();
         }
 
     }
