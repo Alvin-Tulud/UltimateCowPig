@@ -842,6 +842,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost
       objectReference: {fileID: 0}
+    - target: {fileID: 6088762459092827267, guid: 6354e48dbf76ebd44a1990d277b06966, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6871391074668036995, guid: 6354e48dbf76ebd44a1990d277b06966, type: 3}
       propertyPath: 'animatorControllers.Array.data[0]'
       value: 

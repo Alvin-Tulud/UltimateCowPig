@@ -1,3 +1,4 @@
+using Pathfinding.Examples;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -178,13 +179,22 @@ public class GameStateManager : MonoBehaviour
             ghost.GetComponent<PlayerController>().isGhost=false;
             ghost.GetComponent<MoveLogManager>().beginPosLog();
             //set ghost to player
-        }else{
+
+            //turn on off playing indicator
+            ghost.transform.GetChild(1).gameObject.SetActive(true);
+            player.transform.GetChild(1).gameObject.SetActive(false);
+        }
+        else{
             //set player to player
             //set ghost to ghost
             player.GetComponent<PlayerController>().isGhost=false;
             player.GetComponent<MoveLogManager>().beginPosLog();
             ghost.GetComponent<PlayerController>().isGhost=true;
             ghost.GetComponent<MoveLogManager>().beginPlayLog();
+
+            //turn on off playing indicator
+            ghost.transform.GetChild(1).gameObject.SetActive(false);
+            player.transform.GetChild(1).gameObject.SetActive(true);
         }
 
     }

@@ -13,7 +13,7 @@ public class FinishLevel : MonoBehaviour
         {
             //Time.timeScale = 0;
             if (collision.gameObject.GetComponent<PlayerController>().isGhost==true){
-                 //manager.LossState();
+                 manager.LossState();
             }else if(collision.gameObject.GetComponent<PlayerController>().isGhost==false){
                 collision.gameObject.GetComponent<MoveLogManager>().addLocation(transform.position);
                 manager.WinState();
