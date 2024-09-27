@@ -31,6 +31,8 @@ using UnityEngine;
         private int remainingJumps=2;
         private float speedBuff=1;
 
+        public bool isGhost;
+
         public float GetSpeedBuff(){
             return speedBuff;
         }
@@ -82,6 +84,7 @@ using UnityEngine;
 
         private void FixedUpdate()
         {
+            if(!isGhost){
             CheckCollisions();
 
             HandleJump();
@@ -89,6 +92,9 @@ using UnityEngine;
             HandleGravity();
             
             ApplyMovement();
+            }else{
+
+            }
         }
 
         #region Collisions

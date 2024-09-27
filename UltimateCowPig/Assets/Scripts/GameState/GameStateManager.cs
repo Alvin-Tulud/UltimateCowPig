@@ -106,7 +106,7 @@ public class GameStateManager : MonoBehaviour
     {
         lifeCount--;
         if(lifeCount<0){
-            //lose screen
+            Debug.Log("YOU LOST !");
         }
         player.GetComponent<PlayerController>().ResetToSpawn();
         ghost.GetComponent<PlayerController>().ResetToSpawn();
@@ -115,7 +115,7 @@ public class GameStateManager : MonoBehaviour
     public void LossState(){
         lifeCount--;
         if(lifeCount<0){
-            //lose screen
+            Debug.Log("YOU LOST !");
         }
         player.GetComponent<PlayerController>().ResetToSpawn();
         ghost.GetComponent<PlayerController>().ResetToSpawn();
@@ -123,12 +123,16 @@ public class GameStateManager : MonoBehaviour
     }
     private void switchPlayers(){
         //player should stop recording and then just use path when ghost 
-        if(/* player!=ghost*/true){
+        if( player.GetComponent<PlayerController>().isGhost == false ){
             //set player to ghost
+            player.GetComponent<PlayerController>().isGhost=true;
+            ghost.GetComponent<PlayerController>().isGhost=false;
             //set ghost to player
         }else{
             //set player to player
             //set ghost to ghost
+            player.GetComponent<PlayerController>().isGhost=false;
+            ghost.GetComponent<PlayerController>().isGhost=true;
         }
 
     }
