@@ -105,6 +105,7 @@ public class GameStateManager : MonoBehaviour
         if(player.GetComponent<PlayerController>().isGhost==false){
             ghost.GetComponent<MoveLogManager>().clearLog();
             player.GetComponent<MoveLogManager>().resetPlayback();
+            
 
            
         }else{

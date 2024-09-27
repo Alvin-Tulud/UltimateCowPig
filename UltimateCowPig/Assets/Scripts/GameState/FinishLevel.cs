@@ -15,7 +15,8 @@ public class FinishLevel : MonoBehaviour
             if (collision.gameObject.GetComponent<PlayerController>().isGhost==true){
                  manager.LossState();
             }else if(collision.gameObject.GetComponent<PlayerController>().isGhost==false){
-                 manager.WinState();
+                collision.gameObject.GetComponent<MoveLogManager>().addLocation(transform.position);
+                manager.WinState();
             }
             
         
