@@ -95,6 +95,9 @@ public class GameStateManager : MonoBehaviour
         //total win
         if (roundCount>=6){
             WinScreen.SetActive(true);
+            GameObject.Find("Timer").SetActive(false);
+            GameObject.Find("Goals").SetActive(false);
+            GameObject.Find("Lives").SetActive(false);
         }
 
         player.GetComponent<PlayerController>().ResetToSpawn();
