@@ -33,7 +33,7 @@ public class GameStateManager : MonoBehaviour
         camera = Camera.main.GetComponent<CameraFollow>();
 
         timer=0.0f;
-        roundCount=0;
+        roundCount=1;
         lifeCount=3;
     }
 
@@ -71,7 +71,8 @@ public class GameStateManager : MonoBehaviour
         //Add buff every 2 rounds won
         if (roundCount%2==0){
             Random rnd = new Random();
-            int rndBuff=rnd.Next(0,1); 
+            int rndBuff=rnd.Next(0,2); 
+            Debug.Log("rnd:"+rndBuff);
             switch(rndBuff){
                 case 0:
                     
