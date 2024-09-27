@@ -34,7 +34,7 @@ public class GameStateManager : MonoBehaviour
 
         timer=0.0f;
         roundCount=1;
-        lifeCount=3;
+        lifeCount=6;
     }
 
     // Update is called once per frame
@@ -126,6 +126,7 @@ public class GameStateManager : MonoBehaviour
     {
         lifeCount--;
         if(lifeCount<0){
+            Time.timeScale=0;
             LossScreen.SetActive(true);
             Debug.Log("YOU LOST !");
         }
@@ -149,6 +150,7 @@ public class GameStateManager : MonoBehaviour
     public void LossState(){
         lifeCount--;
         if(lifeCount<0){
+            Time.timeScale=0;
             LossScreen.SetActive(true);
             Debug.Log("YOU LOST !");
         }
