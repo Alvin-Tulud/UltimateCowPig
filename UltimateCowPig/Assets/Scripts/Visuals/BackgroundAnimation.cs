@@ -5,7 +5,7 @@ public class BackgroundAnimation : MonoBehaviour
 {
     private Image _image;
 
-    private readonly float _scrollSpeed = 0.125f;
+    public float _scrollSpeed = 0.125f;
 
     private void Awake()
     {
