@@ -82,6 +82,19 @@ public class MoveLogManager : MonoBehaviour
         }
     }
 
+    //call when dead to restart recording after death
+    public void resetRecording()
+    {
+        playerPos.Clear();
+    }
+
+    //call when dead to restart playing after death
+    public void resetPlayback()
+    {
+        playerPosIndex = 0;
+    }
+
+    //call when idk useless
     public void clearLog()
     {
         playerPos.Clear();
