@@ -176,6 +176,10 @@ public class GameStateManager : MonoBehaviour
             //turn on off playing indicator
             ghost.transform.GetChild(1).gameObject.SetActive(true);
             player.transform.GetChild(1).gameObject.SetActive(false);
+
+            //toggle objective text
+            GameObject.FindWithTag("Goal").transform.GetChild(0).gameObject.SetActive(false);
+            GameObject.FindWithTag("Goal").transform.GetChild(1).gameObject.SetActive(true);
         }
         else{
             //set player to player
@@ -188,6 +192,10 @@ public class GameStateManager : MonoBehaviour
             //turn on off playing indicator
             ghost.transform.GetChild(1).gameObject.SetActive(false);
             player.transform.GetChild(1).gameObject.SetActive(true);
+
+            //toggle objective text
+            GameObject.FindWithTag("Goal").transform.GetChild(0).gameObject.SetActive(true);
+            GameObject.FindWithTag("Goal").transform.GetChild(1).gameObject.SetActive(false);
         }
 
     }
