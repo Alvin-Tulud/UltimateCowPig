@@ -280,6 +280,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4309914644079832947, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d1908b34990baab4da2113a19f73f39c, type: 2}
+    - target: {fileID: 4309914644079832947, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4385330354019496384, guid: d1908b34990baab4da2113a19f73f39c, type: 2}
+    - target: {fileID: 4309914644079832947, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496096770569424247, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496096770569424247, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 420
+      objectReference: {fileID: 0}
     - target: {fileID: 8387390879952082878, guid: b55243d816a76b34f8ec6465f9a60acd, type: 3}
       propertyPath: manager
       value: 
@@ -367,6 +387,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 843568827648588160, guid: 6354e48dbf76ebd44a1990d277b06966, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 676eeb1885fa7c64f847b134848f4239, type: 2}
     - target: {fileID: 2779922493482428270, guid: 6354e48dbf76ebd44a1990d277b06966, type: 3}
       propertyPath: manager
       value: 
@@ -484,10 +508,26 @@ PrefabInstance:
     - target: {fileID: 5185365957660342505, guid: 6591bf03afa3fea4bba61dfe98b8feb7, type: 3}
       propertyPath: spawner
       value: 
+      objectReference: {fileID: 2142190261}
+    - target: {fileID: 5185365957660342505, guid: 6591bf03afa3fea4bba61dfe98b8feb7, type: 3}
+      propertyPath: obstacle.Array.size
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5185365957660342505, guid: 6591bf03afa3fea4bba61dfe98b8feb7, type: 3}
+      propertyPath: 'obstacle.Array.data[0]'
+      value: 
+      objectReference: {fileID: 486640518325296445, guid: 7bde562e723c4704095a2ada5d2ff376, type: 3}
+    - target: {fileID: 5185365957660342505, guid: 6591bf03afa3fea4bba61dfe98b8feb7, type: 3}
+      propertyPath: 'obstacle.Array.data[1]'
+      value: 
+      objectReference: {fileID: 567162336345059426, guid: 6bdaf6425d089544cb0a2477f289f48c, type: 3}
     - target: {fileID: 7132197406414594637, guid: 6591bf03afa3fea4bba61dfe98b8feb7, type: 3}
       propertyPath: m_Name
       value: Game State Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7132197406414594637, guid: 6591bf03afa3fea4bba61dfe98b8feb7, type: 3}
+      propertyPath: m_TagString
+      value: Manager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -650,6 +690,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4514768376738328295, guid: f92fae2368333a34195d74449b3aefc0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5333246229969457755, guid: f92fae2368333a34195d74449b3aefc0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -694,11 +738,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: World
       objectReference: {fileID: 0}
+    - target: {fileID: 5553091991898375868, guid: f92fae2368333a34195d74449b3aefc0, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1477544254}
+    - target: {fileID: 7269448909372406214, guid: f92fae2368333a34195d74449b3aefc0, type: 3}
+      propertyPath: data.dataString
+      value: UEsDBBQAAAgIAACAn+sD/wH4XgIAABUFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk3HNl+ht5YA6SGBCenk4ouQ1liDLHkkOUAy/PeuZBu7dHLyevft27cf9icRypbAnDYrI/iT5kB+DIi3ybdBF3yEE91rtRUf0GLeBHe5B9GAeaFOaPTHPs3qApwR7KfaSw+O0FkpkWlTLPge5to6i+6MSgsYMtr5bIWuzwE54eNu5lPOaCVTb32gNYsGFzQZKAemg7bAFlajKsUkLUrgXnIHHk5a2hqmsJkGEX1Pxp5eSylsI4a4cxma3ZY5GPDdckGxtyBgiK85iH3uPGE/d51lFlwjytDzgzA4opqU/NL13ApqD7WydyorX2Y0ug+qatKn/+LxLAnxzOjisS0cR76IywU7vNAzo9b1Jtt3P3TK4zChI5UHupPwloN61iujK8Ux6EzlUysLyUP3eu1tngM7dP5a642zKr/ez108uFxC+6e5FMUujH5UO7ZSh3mH7YPB5fxGweE2bEOBXq/ij4VXuu8fURNYCmMdhpoulZe305XxULJEw4+eVW6ujQLTJyhBUenOG6Rxtzu8iX2dtaT+c2mKN7H2K7hJCe4OH0U3oY0+Xpdlc318ApuvKyeFgm7SPvCMc5prpeoT67fUpm0rk1HWS9tXgv97W4RPkxGNI5hQNk7GyfRul8yG8Wg25RNGOb+fknB7QmGfVG5qoc14cGuqI1d4Z+1fZLAytAznzg09rsRHoW2HFCrTW2YA1LpmuAoHg0Xww+QLLnBAW3BOqLBv8pkSqdkBeHolSkOni5MzNO1YUlKKd+28JyXz8NtIiXdfb3lj4F3A0RdvyS7k8hdQSwMEFAAACAgAAICf6+ch2w1tAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tFKKuZFJoqFBqllisqmRqZG5bpKRpbGhiaV5illyYkqKhblSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAICf6wP/AfheAgAAFQUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAICf6+ch2w1tAAAAeAAAAAkAJAAAAAAAAAAAAAAAqwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABjAwAAAAA=
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f92fae2368333a34195d74449b3aefc0, type: 3}
+--- !u!114 &2142190261 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3702089493166737586, guid: f92fae2368333a34195d74449b3aefc0, type: 3}
+  m_PrefabInstance: {fileID: 2142190260}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dca13c4d8d24734c84b2eb696eb623d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
