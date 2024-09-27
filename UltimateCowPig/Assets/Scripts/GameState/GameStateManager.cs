@@ -24,7 +24,7 @@ public class GameStateManager : MonoBehaviour
     private  CameraFollow camera;
     private  int roundCount;
 
-    private int lifeCount;
+    public int lifeCount;
 
     void Start()
     {
