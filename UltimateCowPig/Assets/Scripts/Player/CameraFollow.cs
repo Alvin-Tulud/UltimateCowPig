@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform Player;
+    public Transform Ghost;
 
     Camera cam;
     float height;
@@ -41,7 +42,13 @@ public class CameraFollow : MonoBehaviour
     }
     Vector3 UpdateTargetPos()
     {
-        Vector3 ret = Player.position;
+         Vector3 ret;
+        if(Player.gameObject.GetComponent<PlayerController>().isGhost==false){
+             ret = Player.position;
+        }else{
+             ret = Ghost.position;
+        }
+        
         ret.z = zStart;
         ret.y= yStart;
         return ret;

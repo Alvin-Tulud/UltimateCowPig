@@ -116,8 +116,10 @@ public class GameStateManager : MonoBehaviour
             LossScreen.SetActive(true);
             Debug.Log("YOU LOST !");
         }
+         timer=0.0f;
         player.GetComponent<PlayerController>().ResetToSpawn();
         ghost.GetComponent<PlayerController>().ResetToSpawn();
+
         resetEnemies();
     }
     public void LossState(){
@@ -126,6 +128,7 @@ public class GameStateManager : MonoBehaviour
             LossScreen.SetActive(true);
             Debug.Log("YOU LOST !");
         }
+         timer=0.0f;
         player.GetComponent<PlayerController>().ResetToSpawn();
         ghost.GetComponent<PlayerController>().ResetToSpawn();
         resetEnemies();
