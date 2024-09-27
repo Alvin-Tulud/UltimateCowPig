@@ -12,6 +12,8 @@ TagManager:
   - enemykill
   - spikekill
   - Overlay
+  - Box
+  - Manager
   layers:
   - Default
   - TransparentFX
