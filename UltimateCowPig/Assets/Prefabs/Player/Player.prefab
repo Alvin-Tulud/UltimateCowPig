@@ -47,6 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 843568827648588160}
+  animatorControllers:
+  - {fileID: 9100000, guid: 9133382db9cce63459393f28bdaf1303, type: 2}
+  - {fileID: 9100000, guid: 676eeb1885fa7c64f847b134848f4239, type: 2}
   _sprite: {fileID: 5882535972995098881}
 --- !u!212 &5882535972995098881
 SpriteRenderer:
@@ -110,7 +113,7 @@ Animator:
   m_GameObject: {fileID: 2769348435694013867}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9133382db9cce63459393f28bdaf1303, type: 2}
+  m_Controller: {fileID: 9100000, guid: 676eeb1885fa7c64f847b134848f4239, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -235,3 +238,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: d4d09e4f2ce5e1a4192e5157a07c407d, type: 2}
   jumpCount: 1
+  isGhost: 0

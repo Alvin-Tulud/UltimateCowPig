@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
     [Header("References")] [SerializeField]
     private Animator _anim;
+    [SerializeField]
+    private RuntimeAnimatorController[] animatorControllers;
+
     private static readonly int GroundedKey = Animator.StringToHash("Grounded");
     private static readonly int JumpKey = Animator.StringToHash("Jump");
 
@@ -26,7 +30,16 @@ public class PlayerAnimation : MonoBehaviour
     }
     void Start()
     {
-        
+        if (transform.parent.GetComponent<PlayerController>().isGhost)
+        {
+            //use ghost anim controller
+            _anim.runtimeAnimatorController = animatorControllers[1];
+        }
+        else
+        {
+            //use player anim controller
+            _anim.runtimeAnimatorController = animatorControllers[0];
+        }
     }
 
     // Update is called once per frame
@@ -35,7 +48,7 @@ public class PlayerAnimation : MonoBehaviour
          if (_player == null) return;
     }
     private void OnJumped(){
-         _anim.SetTrigger(JumpKey);
+        _anim.SetTrigger(JumpKey);
          _anim.ResetTrigger(GroundedKey);
 
 
