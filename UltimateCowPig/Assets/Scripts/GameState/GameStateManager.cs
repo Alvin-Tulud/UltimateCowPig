@@ -101,13 +101,13 @@ public class GameStateManager : MonoBehaviour
         ghost.GetComponent<PlayerController>().ResetToSpawn();
         
         if(player.GetComponent<PlayerController>().isGhost==false){
-            ghost.GetComponent<MoveLogManager>().clearLog();
+            
             player.GetComponent<MoveLogManager>().resetPlayback();
             
 
            
         }else{
-            player.GetComponent<MoveLogManager>().clearLog();
+            
             ghost.GetComponent<MoveLogManager>().resetPlayback();
         }
 
@@ -121,26 +121,26 @@ public class GameStateManager : MonoBehaviour
 
     public void DeadState()
     {
-        lifeCount--;
-        if(lifeCount<0){
-            Time.timeScale=0;
-            LossScreen.SetActive(true);
-            Debug.Log("YOU LOST !");
-        }
+        
          timer=0.0f;
         player.GetComponent<PlayerController>().ResetToSpawn();
         ghost.GetComponent<PlayerController>().ResetToSpawn();
         
         //clear log of dead player, reset play of ghost player
         if(player.GetComponent<PlayerController>().isGhost==false){
-            player.GetComponent<MoveLogManager>().clearLog();
             ghost.GetComponent<MoveLogManager>().resetPlayback();
+            lifeCount--;
+            if(lifeCount<0){
+                Time.timeScale=0;
+                 LossScreen.SetActive(true);
+                 Debug.Log("YOU LOST !");
+             }
         }else{
-            ghost.GetComponent<MoveLogManager>().clearLog();
+             switchPlayers();
             player.GetComponent<MoveLogManager>().resetPlayback();
         }
 
-        
+       
 
         resetEnemies();
     }

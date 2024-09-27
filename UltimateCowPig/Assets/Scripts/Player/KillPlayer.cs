@@ -10,7 +10,7 @@ public class KillPlayer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if(collision.gameObject.GetComponent<PlayerController>().isGhost==true){
+            if(collision.gameObject==GameObject.Find("Ghost")){
                 Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(),GetComponent<Collider2D>(),true);
             }else{
                 manager = GameObject.FindWithTag("Manager").GetComponent<GameStateManager>();
