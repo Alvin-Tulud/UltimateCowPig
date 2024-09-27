@@ -11,6 +11,7 @@ public class GameStateManager : MonoBehaviour
     public SpawnObstacle spawner;
     public GameObject[] obstacle;
     private  GameObject WinScreen;
+    private  GameObject LossScreen;
 
 
     //add loss screen
@@ -27,6 +28,7 @@ public class GameStateManager : MonoBehaviour
     void Start()
     {
         WinScreen = GameObject.FindWithTag("Overlay").transform.GetChild(1).gameObject;
+        LossScreen = GameObject.FindWithTag("Overlay").transform.GetChild(2).gameObject;
         //add lose screen with button that either goes to menu or restarts
         camera = Camera.main.GetComponent<CameraFollow>();
 
@@ -106,6 +108,7 @@ public class GameStateManager : MonoBehaviour
     {
         lifeCount--;
         if(lifeCount<0){
+            LossScreen.SetActive(true);
             Debug.Log("YOU LOST !");
         }
         player.GetComponent<PlayerController>().ResetToSpawn();
@@ -115,6 +118,7 @@ public class GameStateManager : MonoBehaviour
     public void LossState(){
         lifeCount--;
         if(lifeCount<0){
+            LossScreen.SetActive(true);
             Debug.Log("YOU LOST !");
         }
         player.GetComponent<PlayerController>().ResetToSpawn();
