@@ -81,4 +81,9 @@ public class MoveLogManager : MonoBehaviour
             playerPos.Clear();
         }
     }
+
+    public void clearLog()
+    {
+        playerPos.Clear();
+    }
 }
