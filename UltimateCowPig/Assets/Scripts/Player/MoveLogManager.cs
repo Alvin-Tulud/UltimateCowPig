@@ -17,6 +17,10 @@ public class MoveLogManager : MonoBehaviour
 
     //for playing index
     private int playerPosIndex = 0;
+
+    private void Start(){
+        startPlayerLog=true;
+    }
     private void FixedUpdate()
     {
         if (startPlayerLog)
@@ -41,6 +45,10 @@ public class MoveLogManager : MonoBehaviour
     {
         startPlayerLog = false;
         playPlayerLog = true;
+    }
+
+    public void addLocation(Vector3 location){
+        playerPos.Add(location);
     }
 
     //grabs players position at each half second interval
