@@ -137,6 +137,8 @@ GameObject:
   - component: {fileID: 5628955483942364110}
   - component: {fileID: 4126718244590093022}
   - component: {fileID: 749552366701621240}
+  - component: {fileID: 8137093775391205539}
+  - component: {fileID: 2779922493482428270}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -239,3 +241,28 @@ MonoBehaviour:
   _stats: {fileID: 11400000, guid: d4d09e4f2ce5e1a4192e5157a07c407d, type: 2}
   jumpCount: 1
   isGhost: 0
+--- !u!114 &8137093775391205539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5017879935554643890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b58e36751cfec8429355d0fbdd6a006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2779922493482428270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5017879935554643890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff31bf982a6ce084c85efe09bad3235e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
