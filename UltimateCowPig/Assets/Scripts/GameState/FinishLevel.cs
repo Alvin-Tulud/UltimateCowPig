@@ -12,14 +12,13 @@ public class FinishLevel : MonoBehaviour
         if (collision.gameObject.tag=="Player")
         {
             //Time.timeScale = 0;
-            /*if (collision.gameObject.GetComponent<PlayerController>.IsPlayerGhost()==true){
-                 GameStateManager.LossState();
-            }else if(collision.gameObject.GetComponent<PlayerController>.IsPlayerGhost()==false){
-                 GameStateManager.WinState();
+            if (collision.gameObject.GetComponent<PlayerController>().isGhost==true){
+                 manager.LossState();
+            }else if(collision.gameObject.GetComponent<PlayerController>().isGhost==false){
+                 manager.WinState();
             }
             
-            */
-            manager.WinState();
+        
             //winstate function call
         }
     }

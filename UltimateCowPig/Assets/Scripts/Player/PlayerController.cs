@@ -93,7 +93,9 @@ using UnityEngine;
             
             ApplyMovement();
             }else{
-
+               // CheckCollisions();
+               // HandleGravity();
+                //ApplyMovement();
             }
         }
 
