@@ -66,7 +66,7 @@ public class GameStateManager : MonoBehaviour
     public void WinState(){
         roundCount++;
         //Add buff every 2 rounds won
-        if (roundCount%2==0){
+       /* if (roundCount%2==0){
             Random rnd = new Random();
             int rndBuff=rnd.Next(0,2); 
             Debug.Log("rnd:"+rndBuff);
@@ -85,7 +85,7 @@ public class GameStateManager : MonoBehaviour
                     ghost.GetComponent<PlayerController>().jumpCount++;
                     break;
             }
-        }
+        }*/
         //add barrier
         if (roundCount%4==0){
             Random rnd = new Random();
@@ -93,7 +93,7 @@ public class GameStateManager : MonoBehaviour
             spawner.spawnObstacle(obstacle[rndBuff]);
         }
         //total win
-        if (roundCount>=20){
+        if (roundCount>=6){
             WinScreen.SetActive(true);
         }
 
@@ -130,7 +130,7 @@ public class GameStateManager : MonoBehaviour
         if(player.GetComponent<PlayerController>().isGhost==false){
             ghost.GetComponent<MoveLogManager>().resetPlayback();
             lifeCount--;
-            if(lifeCount<0){
+            if(lifeCount<=0){
                 Time.timeScale=0;
                  LossScreen.SetActive(true);
                  Debug.Log("YOU LOST !");

@@ -9,7 +9,7 @@ public class FinishLevel : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
        
-        if (collision.gameObject.tag=="Player")
+        if (collision.gameObject.tag=="Player"&&collision.gameObject==GameObject.Find("Player"))
         {
             //Time.timeScale = 0;
             if (collision.gameObject.GetComponent<PlayerController>().isGhost==true){
